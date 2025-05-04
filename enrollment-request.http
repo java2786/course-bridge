@@ -1,0 +1,41 @@
+GET http://localhost:9093/enrollments/hello
+###
+POST http://localhost:9093/enrollments
+content-type: application/json
+
+{
+  "studentId": 1,
+  "courseId": 1
+}
+
+###
+
+POST http://localhost:9093/enrollments
+content-type: application/json
+
+{
+  "studentId": 2,
+  "courseId": 1
+}
+
+###
+
+POST http://localhost:9093/enrollments
+content-type: application/json
+
+{
+  "studentId": 1,
+  "courseId": 2
+}
+
+###
+
+GET http://localhost:9093/enrollments
+
+###
+
+GET http://localhost:9093/enrollments/count
+
+###
+
+GET http://localhost:9093/enrollments/byStudent/1

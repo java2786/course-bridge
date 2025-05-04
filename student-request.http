@@ -1,0 +1,6 @@
+GET http://localhost:9091/students
+
+###
+GET http://localhost:9091/students/1
+
+

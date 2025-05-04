@@ -1,0 +1,23 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: course-bridge-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: student-service
+          uri: lb://course-bridge-student-service/
+          predicates: 
+            - Path= /students/**
+        - id: course-service
+          uri: lb://course-bridge-course-service/
+          predicates: 
+            - Path= /courses/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/

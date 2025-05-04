@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: course-bridge-gateway
+  cloud:
+    config:
+      uri: http://localhost:8888  # Config Server URL
+  config:
+    import: "configserver:"  # Add this line to import configuration from Config Server

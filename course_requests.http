@@ -1,0 +1,32 @@
+
+GET http://localhost:9092/courses
+
+###
+POST http://localhost:9092/courses
+content-type: application/json
+
+{
+  "name": "Java Programming",
+  "description": "Basics to Advanced Java",
+  "instructor": "Ramesh Kapoor"
+}
+
+###
+POST http://localhost:9092/courses
+content-type: application/json
+
+{
+  "name": "Mobile app development",
+  "description": "Android and IOS development",
+  "instructor": "Mukesh Kumar"
+}
+
+###
+POST http://localhost:9092/courses
+content-type: application/json
+
+{
+  "name": "Data analytics",
+  "description": "Learn python, mysql and powerbi",
+  "instructor": "Yash Chopra"
+}
