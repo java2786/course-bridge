@@ -2,7 +2,7 @@
 GET http://localhost:9092/courses
 
 ###
-POST http://localhost:9092/courses
+POST http://localhost:9092/courses 
 content-type: application/json
 
 {
@@ -30,3 +30,20 @@ content-type: application/json
   "description": "Learn python, mysql and powerbi",
   "instructor": "Yash Chopra"
 }
+
+#### PENDING
+
+###
+PUT http://localhost:5555/courses/1
+Content-Type: application/json
+
+{
+  "name": "Java Programming Updated",
+  "description": "Advanced Java concepts",
+  "instructor": "Ramesh Kapoor"
+}
+###
+DELETE http://localhost:5555/courses/1
+###
+GET http://localhost:5555/courses/search?name=Java
+###

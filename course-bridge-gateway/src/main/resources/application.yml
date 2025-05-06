@@ -1,8 +1,56 @@
+# spring:
+#   application:
+#     name: course-bridge-gateway
+#   cloud:
+#     config:
+#       uri: http://localhost:8888  # Config Server URL
+#   config:
+#     import: "configserver:"  # Add this line to import configuration from Config Server
+
+
 spring:
   application:
     name: course-bridge-gateway
+  # Disable default static resources
+  web:
+    resources:
+      add-mappings: false
+
   cloud:
     config:
-      uri: http://localhost:8888  # Config Server URL
-  config:
-    import: "configserver:"  # Add this line to import configuration from Config Server
+      enabled: false
+    gateway:
+      routes:
+        - id: student-service
+          uri: lb://course-bridge-student-service
+          predicates:
+            - Path=/students/**
+        - id: course-service
+          uri: lb://course-bridge-course-service
+          predicates:
+            - Path=/courses/**
+        - id: enrollment-service
+          uri: lb://course-bridge-enrollment-service
+          predicates:
+            - Path=/enrollments/**
+
+      # default-filters:
+      #   - name: GlobalErrorFilter
+
+      discovery:
+        locator:
+          enabled: true
+      httpclient:
+        response-timeout: 5s
+        
+      # Disable default error handling
+      # error:
+      #   enabled: false
+
+server:
+  port: 5555
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/

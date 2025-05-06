@@ -11,11 +11,11 @@ spring:
           # uri: https://github.com/yourusername/your-config-repo
           # uri: file:///${user.home}/Desktop/config-repo
           # uri: file:///home/jaivik/thispc/trainings/BM/java-fullstack/course-bridge-app/config-repo
-          uri: file:../config-repo  # Relative path to the config-repo directory
+          uri: file:../../config-repo  # Relative path to the config-repo directory
           # Optional: If your repository is private, you may need to provide credentials
           # username: your-username
           # password: your-password
-          clone-on-start: true
+          # clone-on-start: true
           default-label: master # branch name
 
   # discovery:

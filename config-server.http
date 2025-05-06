@@ -1,0 +1,3 @@
+# GET http://localhost:8888/course-bridge-gateway/default
+###
+GET http://localhost:8888/course-bridge-service-discovery/default

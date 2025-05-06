@@ -4,6 +4,9 @@ GET http://localhost:5555/students
 GET http://localhost:5555/students/1
 
 ###
+GET http://localhost:5555/students/NotFound
+
+###
 
 POST http://localhost:5555/students
 content-type: application/json

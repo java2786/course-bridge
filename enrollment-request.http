@@ -39,3 +39,21 @@ GET http://localhost:9093/enrollments/count
 ###
 
 GET http://localhost:9093/enrollments/byStudent/1
+
+
+#### PENDING
+
+###
+GET http://localhost:9093/enrollments/1
+###
+DELETE http://localhost:9093/enrollments/1
+###
+GET http://localhost:9093/enrollments/byCourse/1
+###
+
+###
+
+###
+
+###
+
