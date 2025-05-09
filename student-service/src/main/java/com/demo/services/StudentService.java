@@ -1,0 +1,56 @@
+package com.demo.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.demo.entities.Student;
+import com.demo.repositories.StudentRepository;
+
+@Service
+public class StudentService {
+ 	@Autowired
+	private StudentRepository stdRepo;
+	
+	public List<Student> allStudents(){
+		return stdRepo.findAll();
+	}
+	
+	public Student saveStudent(Student std){
+		return stdRepo.save(std);
+	}
+	
+	public Student getStudentById(int id) throws Exception {
+		System.out.println("stdId: "+id);
+		Optional<Student> stdOptional = stdRepo.findById(id);
+		if(stdOptional.isEmpty()) {
+			throw new Exception("Student not found");
+		} else {
+			Student student = stdOptional.get();
+			return student;
+		}
+	}
+
+	public Student deleteStudentById(int id) throws Exception{
+		Student std = getStudentById(id);
+		stdRepo.deleteById(id);
+		return std;
+	}
+
+	public Student updateStudentById(int id, Student input) throws Exception {
+		Student std = getStudentById(id);
+		if(input.getName()!=null && input.getName().length()>0)
+		std.setName(input.getName());
+
+		if(input.getEmail()!=null && input.getEmail().length()>0)
+		std.setEmail(input.getEmail());
+
+		return stdRepo.save(std);
+	}
+
+	public List<Student> findByName(String name) {
+		return stdRepo.findByName(name);
+	}   
+}

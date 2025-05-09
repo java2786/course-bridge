@@ -5,4 +5,4 @@ spring:
     config:
       uri: http://localhost:8888  # Config Server URL
   config:
-    import: "configserver:"  # Add this line to import configuration from Config Server
+    import: "configserver:"  # Add this line to import configuration from Config Server 

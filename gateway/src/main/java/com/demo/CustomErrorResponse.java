@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CustomErrorResponse {
-    private String name = "Songs";
+
     private String message;
     private int status;
     private LocalDateTime timestamp;
@@ -55,17 +55,9 @@ public class CustomErrorResponse {
         this.path = path;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
     public String toString() {
-        return "CustomErrorResponse [name=" + name + ", message=" + message + ", status=" + status + ", timestamp="
+        return "CustomErrorResponse [message=" + message + ", status=" + status + ", timestamp="
                 + timestamp + ", path=" + path + "]";
     }
 

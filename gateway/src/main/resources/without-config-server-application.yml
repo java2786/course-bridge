@@ -1,20 +1,6 @@
-# spring:
-#   application:
-#     name: course-bridge-gateway
-#   cloud:
-#     config:
-#       uri: http://localhost:8888  # Config Server URL
-#   config:
-#     import: "configserver:"  # Add this line to import configuration from Config Server
-
-
 spring:
   application:
     name: course-bridge-gateway
-  # Disable default static resources
-  web:
-    resources:
-      add-mappings: false
 
   cloud:
     config:
@@ -34,18 +20,11 @@ spring:
           predicates:
             - Path=/enrollments/**
 
-      # default-filters:
-      #   - name: GlobalErrorFilter
-
       discovery:
         locator:
           enabled: true
       httpclient:
         response-timeout: 5s
-        
-      # Disable default error handling
-      # error:
-      #   enabled: false
 
 server:
   port: 5555

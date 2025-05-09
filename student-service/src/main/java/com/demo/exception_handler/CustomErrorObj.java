@@ -1,12 +1,14 @@
-package com.demo;
+package com.demo.exception_handler;
 
 import java.time.Instant;
+import java.util.List;
 
 public class CustomErrorObj{
-    private String abc = "songs";
+
     private String error;
     private String message;
-    private String path;
+    // private String path;
+    private List<CustomErrorPath> paths;
     private int status;
     private Instant timestamp;
 
@@ -16,16 +18,14 @@ public class CustomErrorObj{
         this.timestamp = Instant.now();
     }
 
-    public CustomErrorObj(String error, String message, String path, int status) {
+    public CustomErrorObj(String error, String message, List<CustomErrorPath> paths, int status) {
         this();
         this.error = error;
         this.message = message;
         this.status = status;
-        this.path = path;
+        this.paths = paths;
     }
-    public String getAbc() {
-        return abc;
-    }
+
     public String getError() {
         return error;
     }
@@ -50,17 +50,16 @@ public class CustomErrorObj{
     public void setStatus(int status) {
         this.status = status;
     }
-    public String getPath() {
-        return path;
+    public List<CustomErrorPath> getPaths() {
+        return paths;
     }
-    public void setPath(String path) {
-        this.path = path;
+    public void setPaths(List<CustomErrorPath> path) {
+        this.paths = paths;
     }
 
     @Override
     public String toString() {
-        return "CustomErrorObj [error=" + error + ", message=" + message + ", path=" + path
-                + ", status=" + status + ", timestamp=" + timestamp + "]";
+        return "CustomErrorObj [error=" + error + ", message=" + message + ", paths=" + paths + ", status=" + status + ", timestamp=" + timestamp + "]";
     }
 
 }
