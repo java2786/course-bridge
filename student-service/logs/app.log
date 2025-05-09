@@ -1,0 +1,37 @@
+2025-05-09 21:47:22 [http-nio-9091-exec-1] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09 21:47:22 [http-nio-9091-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-09 21:47:22 [http-nio-9091-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-09 21:47:22 [http-nio-9091-exec-1] INFO  c.demo.controllers.StudentController - Retrieving all students
+2025-05-09 21:47:22 [http-nio-9091-exec-1] INFO  com.demo.services.StudentService - Retrieving all students
+2025-05-09 21:47:33 [http-nio-9091-exec-2] INFO  c.demo.controllers.StudentController - Fetching student with id: #1
+2025-05-09 21:47:33 [http-nio-9091-exec-2] INFO  com.demo.services.StudentService - Fetching student with id: #1
+2025-05-09 21:47:33 [http-nio-9091-exec-2] ERROR com.demo.services.StudentService - Student with id: #1not found
+2025-05-09 21:47:33 [http-nio-9091-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.Exception: Student not found]
+2025-05-09 21:47:59 [http-nio-9091-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource students/NotFound/abc.]
+2025-05-09 21:48:15 [http-nio-9091-exec-4] DEBUG c.d.e.CustomUniqueEmailValidator - student's email: #kamlesh@yahoo.com
+2025-05-09 21:48:15 [http-nio-9091-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.demo.entities.Student com.demo.controllers.StudentController.saveStudent(com.demo.entities.Student): [Field error in object 'student' on field 'email': rejected value [kamlesh@yahoo.com]; codes [CustomUniqueEmail.student.email,CustomUniqueEmail.email,CustomUniqueEmail.java.lang.String,CustomUniqueEmail]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [student.email,email]; arguments []; default message [email]]; default message [Email must end with @gmail.com]] ]
+2025-05-09 21:48:36 [http-nio-9091-exec-5] DEBUG c.d.e.CustomUniqueEmailValidator - student's email: #neha@gmail.com
+2025-05-09 21:48:36 [http-nio-9091-exec-5] INFO  c.demo.controllers.StudentController - Student request body: Student [id=0, name=Neha, email=neha@gmail.com]
+2025-05-09 21:48:36 [http-nio-9091-exec-5] INFO  com.demo.services.StudentService - Student request body: Student [id=0, name=Neha, email=neha@gmail.com]
+2025-05-09 21:48:36 [http-nio-9091-exec-5] DEBUG c.d.e.CustomUniqueEmailValidator - student's email: #neha@gmail.com
+2025-05-09 21:48:54 [http-nio-9091-exec-6] DEBUG c.d.e.CustomUniqueEmailValidator - student's email: #kamlesh.updated@yahoo.com
+2025-05-09 21:48:54 [http-nio-9091-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public com.demo.entities.Student com.demo.controllers.StudentController.updateStudentById(int,com.demo.entities.Student) throws java.lang.Exception with 2 errors: [Field error in object 'student' on field 'email': rejected value [kamlesh.updated@yahoo.com]; codes [CustomUniqueEmail.student.email,CustomUniqueEmail.email,CustomUniqueEmail.java.lang.String,CustomUniqueEmail]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [student.email,email]; arguments []; default message [email]]; default message [Email must end with @gmail.com]] [Field error in object 'student' on field 'name': rejected value [Kamlesh Updated]; codes [Size.student.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [student.name,name]; arguments []; default message [name],10,3]; default message [Name must be between 3 and 10 characters]] ]
+2025-05-09 21:49:02 [http-nio-9091-exec-7] INFO  c.demo.controllers.StudentController - Deleting student with id: #1
+2025-05-09 21:49:02 [http-nio-9091-exec-7] INFO  com.demo.services.StudentService - Deleting student with id: #1
+2025-05-09 21:49:02 [http-nio-9091-exec-7] INFO  com.demo.services.StudentService - Fetching student with id: #1
+2025-05-09 21:49:12 [http-nio-9091-exec-8] INFO  c.demo.controllers.StudentController - Searching students by name: #Kamlesh
+2025-05-09 21:49:12 [http-nio-9091-exec-8] INFO  com.demo.services.StudentService - Searching students by name: #Kamlesh
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application COURSE-BRIDGE-STUDENT-SERVICE with eureka with status DOWN
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1746807603324, current=DOWN, previous=UP]
+2025-05-09 21:50:03 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_COURSE-BRIDGE-STUDENT-SERVICE/10.0.2.15:course-bridge-student-service:9091: registering service...
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-09 21:50:03 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-05-09 21:50:03 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_COURSE-BRIDGE-STUDENT-SERVICE/10.0.2.15:course-bridge-student-service:9091 - registration status: 204
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-56 - Shutdown initiated...
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-56 - Shutdown completed.
+2025-05-09 21:50:03 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-05-09 21:50:06 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-05-09 21:50:06 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_COURSE-BRIDGE-STUDENT-SERVICE/10.0.2.15:course-bridge-student-service:9091 - deregister  status: 200
+2025-05-09 21:50:06 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

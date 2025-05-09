@@ -6,3 +6,21 @@ spring:
       uri: http://localhost:8888  # Config Server URL
   config:
     import: "configserver:"  # Add this line to import configuration from Config Server 
+
+# Set the logging level for the root logger
+logging:
+  level:
+    root: INFO
+
+# Set the logging level for specific packages
+    com:
+      demo: DEBUG
+
+# Configure the log file
+  file:
+    name: logs/app.log
+
+# Configure the log pattern
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
